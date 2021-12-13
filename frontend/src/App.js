@@ -1,7 +1,8 @@
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { Container } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
+
 
 function App() {
   return (
@@ -10,6 +11,12 @@ function App() {
       <Container>
         <main>
           <h2>Welcom to store</h2>
+          <div>
+            <Button>button</Button>
+          </div>
+          <div>
+            <button className='btn btn-success'>button</button>
+          </div>
         </main>
       </Container>
       <Footer />
