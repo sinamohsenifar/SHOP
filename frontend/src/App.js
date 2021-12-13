@@ -6,7 +6,7 @@ import { Container, Button } from 'react-bootstrap'
 
 function App() {
   return (
-    <div className="App ">
+    <div className="App light">
       <Header />
       <Container>
         <main>
