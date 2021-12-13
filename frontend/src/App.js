@@ -1,20 +1,19 @@
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { Container } from 'react-bootstrap'
-import HomeScreen from './screens/HomeScreens' 
+import HomeScreen from './screens/HomeScreens'
+import ProductScreen from './screens/ProductScreen';
+
+import { Routes, Route } from 'react-router';
 
 function App() {
   return (
     <div className="App light">
       <Header />
-      <Container>
-        <main>
-          <h2>Welcom to store</h2>
-          <hr/>
-          <HomeScreen></HomeScreen>
-        </main>
-      </Container>
+      <Routes>
+        <Route path='/' element={<HomeScreen/>} exact/>
+        <Route path='/product/:id' element={<ProductScreen/>} />
+      </Routes>
       <Footer />
     </div>
   );
