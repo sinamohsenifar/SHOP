@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { Container, Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap';
-import Rating from '../components/Rating'
-import products from '../products';
+
 import { useParams } from 'react-router';
-import axios from 'axios'
+
+import { Link } from 'react-router-dom';
+
+import { Container, Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap';
+
+import Rating from '../components/Rating';
+
+import axios from 'axios';
 
 
 
