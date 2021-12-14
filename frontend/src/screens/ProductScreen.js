@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Image, ListGroup, Button, Card } from 'react-bootstrap';
 import Rating from '../components/Rating'
 import products from '../products';
 import { useParams } from 'react-router';
-
+import axios from 'axios'
 
 
 
 
 function ProductScreen() {
     let { id } = useParams();
-    const product = products.find((p) => p._id === id)
+
+    const [product, setProduct] = useState([])
+
+    useEffect(() => {
+        async function fetchProduct() {
+            const { data } = await axios.get('/api/products/' + id)
+            setProduct(data)
+        }
+
+        fetchProduct()
+
+    }, [])
+
+    // const product = products.find((p) => p._id === id)
 
     return (
         <main>
@@ -56,7 +69,7 @@ function ProductScreen() {
                                             Status:
                                         </Col>
                                         <Col className='text-black'>
-                                            {product.countInStock > 0 ?  product.countInStock + ' In Stock' : 'Out of Stock'}
+                                            {product.countInStock > 0 ? product.countInStock + ' In Stock' : 'Out of Stock'}
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
