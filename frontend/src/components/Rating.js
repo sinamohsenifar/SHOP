@@ -2,7 +2,7 @@ import React from 'react'
 
 function Rating({ value, text, color }) {
 
-    const text_full = ' ' +'from ' + text + ' reviews' 
+    const text_full = '  from '+ text + ' reviews' 
     
     return (
         <div className='rating'>
